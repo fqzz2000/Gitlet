@@ -1,0 +1,76 @@
+# Create two branches and merge other into mastecheckout r with a merge conflict.
+I setup3.inc
+> branch other
+<<<
++ h.txt wug2.txt
+> add h.txt
+<<<
+> rm g.txt
+<<<
++ f.txt wug2.txt
+> add f.txt
+<<<
+> status
+=== Branches ===
+*master
+other
+
+=== Staged Files ===
+f.txt
+h.txt
+
+=== Removed Files ===
+g.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<
+> commit "Add h.txt, remove g.txt, and change f.txt"
+<<<
+> checkout other
+<<<
++ f.txt notwug.txt
+> add f.txt
+<<<
++ k.txt wug3.txt
+> add k.txt
+<<<
+> commit "Add k.txt and modify f.txt"
+<<<
+> checkout master
+<<<
+> log
+===
+${COMMIT_HEAD_T}
+${ARBLINES}
+<<<*
+D MASTER_HEAD "${1}"
+> merge other
+Encountered a merge conflict.
+<<<
+* g.txt
+= h.txt wug2.txt
+= k.txt wug3.txt
+= f.txt conflict1.txt
+> log
+${COMMIT_LOG_T}
+===
+commit ${MASTER_HEAD}
+${ARBLINES}
+<<<*
+> status
+=== Branches ===
+*master
+other
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+<<<

@@ -1,0 +1,10 @@
+# Commit message with blank message
+I definitions.inc
++ f.txt wug.txt
+> init
+<<<
+> add f.txt
+<<<
+>commit ""
+Please enter a commit message.
+<<<

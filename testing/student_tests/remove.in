@@ -1,0 +1,24 @@
+# A simple test for adding commiting, modifying
+I setup1.inc
+> checkout ${UID1} -- wug.txt
+<<<
+= wug.txt wug.txt
+> checkout ${UID2} -- wug.txt
+<<<
+= wug.txt notwug.txt
+> rm wug.txt
+<<< 
+> status
+=== Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+wug.txt
+
+=== Modifications Not Staged For Commit === 
+
+=== Untracked Files ===
+
+<<<
